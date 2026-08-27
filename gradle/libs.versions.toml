@@ -2,6 +2,7 @@
 kotlin = "2.4.10"
 
 [plugins]
+gradle-kotlin-dsl = { id = "org.gradle.kotlin.kotlin-dsl", version = "6.7.3" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 
 [libraries]
