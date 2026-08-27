@@ -1,0 +1,93 @@
+/*
+ * Copyright 2026 Scott Weeden-Moody
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this project except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.lillicoder.adventofcode2023.day4
+
+import com.lillicoder.adventofcode.kotlin.io.Resources
+import com.lillicoder.adventofcode.kotlin.text.splitNotEmpty
+import kotlin.math.pow
+
+fun main() {
+    val day4 = Day4()
+    val input =
+        Resources.lines(
+            "input.txt",
+        ) ?: throw IllegalArgumentException("Could not read input from file.")
+    println("[Part 1] The total score of the given scratchcards is ${day4.part1(input)}.")
+    println("[Part 2] The total count of cards, including clones, is ${day4.part2(input)}.")
+}
+
+class Day4 {
+    fun part1(input: List<String>) = input.map { it.toScratchcard() }.sumOf { it.score }
+
+    fun part2(input: List<String>) = input.map { it.toScratchcard() }.countWithWinners()
+}
+
+/**
+ * Represents a single scratchcard.
+ * @param id ID.
+ * @param winningNumbers Numbers to match to win points.
+ * @param playNumbers Numbers played.
+ * @param matches Number of matches of the play numbers with the winner numbers.
+ * @param score Score based on number of matches.
+ *
+ */
+private data class Scratchcard(
+    val id: Int,
+    val winningNumbers: List<Int>,
+    val playNumbers: List<Int>,
+    val matches: Int = winningNumbers.count { it in playNumbers },
+    val score: Int =
+        when (matches) {
+            0 -> 0
+            else -> 2.0.pow(matches - 1).toInt()
+        },
+)
+
+/**
+ * Counts the total number of [Scratchcard] for this list, including
+ * cards that get copied due to having one or more matches.
+ * @return Count.
+ */
+private fun List<Scratchcard>.countWithWinners(): Int {
+    // We start with 1 of each card
+    val frequency = associate { it.id to 1 }.toMutableMap()
+    forEachIndexed { index, card ->
+        val count = frequency[card.id]!!
+        val matches = card.matches
+
+        val copyIds = IntRange(1, matches).mapNotNull { getOrNull(index + it)?.id }
+        copyIds.forEach { id -> frequency.merge(id, count, Int::plus) }
+    }
+
+    // All cards have been copied and their counts updated
+    return frequency.values.sum()
+}
+
+/**
+ * Converts this string to an equivalent [Scratchcard].
+ * @return Scratchcard.
+ */
+private fun String.toScratchcard(): Scratchcard {
+    val id = substringBefore(":").substringAfter("Card ").trim().toInt()
+    val blocks = substringAfter(": ").split(" | ")
+
+    // Single digits have an extra space, so when we split we'll end up with some
+    // elements as an empty string, so drop those before attempting to cast
+    val winning = blocks[0].splitNotEmpty(" ").map { it.toInt() }
+    val played = blocks[1].splitNotEmpty(" ").map { it.toInt() }
+    return Scratchcard(id, winning, played)
+}

@@ -3,6 +3,7 @@ advent-of-code = "1.8.1"
 kotlin = "2.4.10"
 
 [libraries]
+advent-of-code-kotlin-collections = { module = "com.github.lillicoder.advent-of-code-kotlin:collections", version.ref = "advent-of-code" }
 advent-of-code-kotlin-graphs = { module = "com.github.lillicoder.advent-of-code-kotlin:graphs", version.ref = "advent-of-code" }
 advent-of-code-kotlin-grids = { module = "com.github.lillicoder.advent-of-code-kotlin:grids", version.ref = "advent-of-code" }
 advent-of-code-kotlin-io = { module = "com.github.lillicoder.advent-of-code-kotlin:io", version.ref = "advent-of-code" }
