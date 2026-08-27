@@ -18,3 +18,12 @@ plugins {
     alias(libs.plugins.gradle.kotlin.dsl)
     alias(libs.plugins.ktlint.gradle)
 }
+
+gradlePlugin {
+    plugins {
+        register("createDayModule") {
+            id = "com.lillicoder.adventofcode.plugins.create-day-module"
+            implementationClass = "com.lillicoder.adventofcode.plugins.CreateDayModulePlugin"
+        }
+    }
+}
