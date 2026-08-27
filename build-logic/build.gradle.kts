@@ -16,4 +16,5 @@
 
 plugins {
     alias(libs.plugins.gradle.kotlin.dsl)
+    alias(libs.plugins.ktlint.gradle)
 }

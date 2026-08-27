@@ -26,6 +26,12 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         mavenCentral()
+        maven {
+            url = uri("https://jitpack.io")
+            content {
+                includeGroup("com.github.lillicoder.advent-of-code-kotlin")
+            }
+        }
     }
 }
 
@@ -34,3 +40,13 @@ plugins {
 }
 
 includeBuild("build-logic")
+include(":2024:day1")
+include(":2024:day2")
+include(":2024:day3")
+include(":2024:day4")
+include(":2024:day5")
+include(":2024:day6")
+include(":2024:day7")
+include(":2024:day8")
+include(":2024:day9")
+include(":2024:day10")

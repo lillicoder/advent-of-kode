@@ -1,10 +1,17 @@
 [versions]
+advent-of-code = "1.8.1"
 kotlin = "2.4.10"
+
+[libraries]
+advent-of-code-kotlin-graphs = { module = "com.github.lillicoder.advent-of-code-kotlin:graphs", version.ref = "advent-of-code" }
+advent-of-code-kotlin-grids = { module = "com.github.lillicoder.advent-of-code-kotlin:grids", version.ref = "advent-of-code" }
+advent-of-code-kotlin-io = { module = "com.github.lillicoder.advent-of-code-kotlin:io", version.ref = "advent-of-code" }
+advent-of-code-kotlin-math = { module = "com.github.lillicoder.advent-of-code-kotlin:math", version.ref = "advent-of-code" }
+advent-of-code-kotlin-text = { module = "com.github.lillicoder.advent-of-code-kotlin:text", version.ref = "advent-of-code" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 
 [plugins]
 gradle-kotlin-dsl = { id = "org.gradle.kotlin.kotlin-dsl", version = "6.7.3" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-
-[libraries]
-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+ktlint-gradle = { id = "org.jlleitschuh.gradle.ktlint", version = "14.2.0" }
