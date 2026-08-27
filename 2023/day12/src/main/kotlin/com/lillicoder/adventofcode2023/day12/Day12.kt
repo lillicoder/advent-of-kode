@@ -99,7 +99,7 @@ private data class Row(
         var expandedSprings = springs
         val expandedPattern = pattern.toMutableList()
 
-        for (index in 1..<factor) {
+        (1..<factor).forEach { _ ->
             expandedSprings += "$unknown$springs"
             expandedPattern += pattern
         }
