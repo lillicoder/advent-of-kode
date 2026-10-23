@@ -64,7 +64,7 @@ class Day9 {
         val destination = LinkedHashMap<K, MutableList<V>>()
         forEachIndexed { index, element ->
             val key = keySelector(index, element)
-            val list = destination.getOrPut(key) { ArrayList<V>() }
+            val list = destination.getOrPut(key) { ArrayList() }
             list.add(valueTransform(index, element))
         }
         return destination
