@@ -32,7 +32,7 @@ fun main() {
 
 class Day10 {
     fun part1(input: String): Long {
-        val grid = input.toGrid { it.digitToInt() }
+        val grid = input.asIntGrid()
         val graph =
             graph<Int> {
                 // Copy the vertices
@@ -69,7 +69,7 @@ class Day10 {
     }
 
     fun part2(input: String): Long {
-        val grid = input.toGrid { it.digitToInt() }
+        val grid = input.asIntGrid()
         val graph =
             graph<Int> {
                 // Copy the vertices
@@ -132,3 +132,9 @@ private fun <T> Graph<T>.countPathsFrom(
 
     return count
 }
+
+/**
+ * Converts this string to a grid where each node is an [Int].
+ * @return Grid.
+ */
+private fun String.asIntGrid() = toGrid { it.digitToInt() }
