@@ -114,9 +114,6 @@ private data class Network(
         // First node is always AAA
         var node = nodes[nodes.keys.first()]!!
         val instructions = instructions.splitNotEmpty("")
-
-        println("[Whole] Starting node discovered. [node=$node]")
-
         do {
             // Until we find ZZZ, loop over each instruction and track to the next node
             instructions.forEach { instruction ->
@@ -126,17 +123,15 @@ private data class Network(
                         "L" -> node.left!!
                         else -> node.right!!
                     }
+
                 // Navigate to next node
                 node = nodes[nodeId]!!
-
-                println("[Whole] Next node discovered. [node=$node]")
 
                 // Update steps by 1
                 steps++
             }
         } while (node.id.contentEquals("ZZZ").not())
 
-        println("[Whole] Final node discovered in $steps steps. [node=$node]")
         return steps
     }
 }
