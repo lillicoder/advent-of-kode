@@ -143,18 +143,17 @@ private fun SquareLatticeGraph<String>.tilt(direction: Direction): SquareLattice
 private fun List<Vertex<String>>.tilt(comparator: Comparator<String>) =
     joinToString("") {
         it.value
-    }.split("#")
-        .map {
-            // Split by cubes, sort each chunk to roll the spheres, and put the cubes back
-            it
-                .splitNotEmpty(
-                    "",
-                ).sortedWith(
-                    comparator,
-                ).joinToString(
-                    "",
-                )
-        }.joinToString("#")
+    }.split("#").joinToString("#") {
+        // Split by cubes, sort each chunk to roll the spheres, and put the cubes back
+        it
+            .splitNotEmpty(
+                "",
+            ).sortedWith(
+                comparator,
+            ).joinToString(
+                "",
+            )
+    }
 
 /**
  * Converts a list of strings representing columns to a list of strings representing
