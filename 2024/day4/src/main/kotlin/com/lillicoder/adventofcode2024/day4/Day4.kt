@@ -26,8 +26,8 @@ import com.lillicoder.adventofcode.kotlin.text.splitNotEmpty
 fun main() {
     val day4 = Day4()
     val input = Resources.text("input.txt") ?: throw IllegalArgumentException("Could not read input.")
-    println("The number of XMAS in the grid is ${day4.part1(input)}.")
-    println("The number of X-MAS in the grid is ${day4.part2(input)}.")
+    println("[Part 1] The number of XMAS in the grid is ${day4.part1(input)}.")
+    println("[Part 2] The number of X-MAS in the grid is ${day4.part2(input)}.")
 }
 
 class Day4 {

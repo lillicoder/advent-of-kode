@@ -23,8 +23,8 @@ import kotlin.math.pow
 fun main() {
     val day7 = Day7()
     val input = Resources.text("input.txt") ?: throw IllegalArgumentException("Could not read input.")
-    println("The sum of all test values for (+, *) that can be satisfied is ${day7.part1(input)}.")
-    println("The sum of all test values for (+, *, ||) that can be satisfied is ${day7.part2(input)}.")
+    println("[Part 1] The sum of all test values for (+, *) that can be satisfied is ${day7.part1(input)}.")
+    println("[Part 2] The sum of all test values for (+, *, ||) that can be satisfied is ${day7.part2(input)}.")
 }
 
 class Day7 {

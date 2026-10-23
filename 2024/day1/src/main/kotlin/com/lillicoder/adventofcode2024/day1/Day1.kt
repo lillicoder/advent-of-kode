@@ -22,8 +22,8 @@ import kotlin.math.abs
 fun main() {
     val day1 = Day1()
     val input = Resources.text("input.txt") ?: throw IllegalArgumentException("Could not read input.")
-    println("The total distance between the lists is ${day1.part1(input)}.")
-    println("The similarity score for the lists is ${day1.part2(input)}.")
+    println("[Part 1] The total distance between the lists is ${day1.part1(input)}.")
+    println("[Part 2] The similarity score for the lists is ${day1.part2(input)}.")
 }
 
 class Day1 {

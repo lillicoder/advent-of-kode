@@ -25,8 +25,8 @@ import com.lillicoder.adventofcode.kotlin.math.Vertex
 fun main() {
     val day6 = Day6()
     val input = Resources.text("input.txt") ?: throw IllegalArgumentException("Could not read input.")
-    println("The number of unique positions visited by the guard is ${day6.part1(input)}.")
-    println("The number of valid position to add an obstacle to create a loop is ${day6.part2(input)}.")
+    println("[Part 1] The number of unique positions visited by the guard is ${day6.part1(input)}.")
+    println("[Part 2] The number of valid position to add an obstacle to create a loop is ${day6.part2(input)}.")
 }
 
 class Day6 {

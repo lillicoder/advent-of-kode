@@ -26,8 +26,8 @@ import com.lillicoder.adventofcode.kotlin.math.Vertex
 fun main() {
     val day10 = Day10()
     val input = Resources.text("input.txt") ?: throw IllegalArgumentException("Could not read input.")
-    println("The sum of all trailhead scores is ${day10.part1(input)}.")
-    println("The sum of all trailhead ratings is ${day10.part2(input)}.")
+    println("[Part 1] The sum of all trailhead scores is ${day10.part1(input)}.")
+    println("[Part 2] The sum of all trailhead ratings is ${day10.part2(input)}.")
 }
 
 class Day10 {

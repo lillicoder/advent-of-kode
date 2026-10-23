@@ -22,8 +22,8 @@ import kotlin.math.abs
 fun main() {
     val day2 = Day2()
     val input = Resources.text("input.txt") ?: throw IllegalArgumentException("Could not read input.")
-    println("The number of safe reports is ${day2.part1(input)}.")
-    println("The number of safe reports with dampening is ${day2.part2(input)}.")
+    println("[Part 1] The number of safe reports is ${day2.part1(input)}.")
+    println("[Part 2] The number of safe reports with dampening is ${day2.part2(input)}.")
 }
 
 class Day2 {

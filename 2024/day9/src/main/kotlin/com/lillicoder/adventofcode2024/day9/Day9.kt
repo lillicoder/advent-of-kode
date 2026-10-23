@@ -22,8 +22,8 @@ import java.util.Collections
 fun main() {
     val day9 = Day9()
     val input = Resources.text("input.txt") ?: throw IllegalArgumentException("Could not read input.")
-    println("The filesystem checksum after block-based compaction is ${day9.part1(input)}.")
-    println("The filesystem checksum after file-based compaction is ${day9.part2(input)}.")
+    println("[Part 1] The filesystem checksum after block-based compaction is ${day9.part1(input)}.")
+    println("[Part 2] The filesystem checksum after file-based compaction is ${day9.part2(input)}.")
 }
 
 class Day9 {

@@ -21,8 +21,8 @@ import com.lillicoder.adventofcode.kotlin.io.Resources
 fun main() {
     val day5 = Day5()
     val input = Resources.text("input.txt") ?: throw IllegalArgumentException("Could not read input.")
-    println("The sum of middle page numbers for correctly ordered updates is ${day5.part1(input)}.")
-    println("The sum of middle page numbers for corrected updates is ${day5.part2(input)}.")
+    println("[Part 1] The sum of middle page numbers for correctly ordered updates is ${day5.part1(input)}.")
+    println("[Part 2] The sum of middle page numbers for corrected updates is ${day5.part2(input)}.")
 }
 
 class Day5 {

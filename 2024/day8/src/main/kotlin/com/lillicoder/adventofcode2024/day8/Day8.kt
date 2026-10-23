@@ -24,8 +24,8 @@ import com.lillicoder.adventofcode.kotlin.math.Coordinates
 fun main() {
     val day8 = Day8()
     val input = Resources.text("input.txt") ?: throw IllegalArgumentException("Could not read input.")
-    println("The number of unique locations in the map with an antinode is ${day8.part1(input)}.")
-    println("The number of unique locations in the map with repeated antinodes is ${day8.part2(input)}.")
+    println("[Part 1] The number of unique locations in the map with an antinode is ${day8.part1(input)}.")
+    println("[Part 2] The number of unique locations in the map with repeated antinodes is ${day8.part2(input)}.")
 }
 
 class Day8 {
