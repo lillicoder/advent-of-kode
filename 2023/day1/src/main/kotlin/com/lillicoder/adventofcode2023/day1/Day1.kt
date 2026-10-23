@@ -86,7 +86,7 @@ private fun String.digit(position: Position): Int {
         when (position) {
             Position.FIRST -> {
                 DigitLookup(
-                    { it.firstOrNull { it.isDigit() } },
+                    { it.firstOrNull { character -> character.isDigit() } },
                     { line, digit -> line.indexOf(digit) },
                     {
                         it
@@ -101,7 +101,7 @@ private fun String.digit(position: Position): Int {
             }
             Position.LAST -> {
                 DigitLookup(
-                    { it.lastOrNull { it.isDigit() } },
+                    { it.lastOrNull { character -> character.isDigit() } },
                     { line, digit -> line.lastIndexOf(digit) },
                     {
                         it
